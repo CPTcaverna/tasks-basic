@@ -11,11 +11,7 @@ function Tasks(props: {
   const navigate = useNavigate();
 
   function onSeeDetailsClick(task: Task) {
-    const queryParams = new URLSearchParams({
-      title: task.title,
-      description: task.description,
-    }).toString();
-    navigate(`/tasks?${queryParams}`);
+    navigate(`/tasks/${task.id}`);
   }
   return (
     <ul className="space-y-4 p-6  bg-slate-200 rounded-md shadow">
